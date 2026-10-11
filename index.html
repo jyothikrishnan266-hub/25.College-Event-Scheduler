@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cab Booking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🚕 QuickCab</div>
+    <nav>
+      <a href="#booking">Book Cab</a>
+      <a href="#history">My Bookings</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Booking Section -->
+    <section class="booking-section" id="booking">
+
+      <div class="intro">
+        <h1>Book Your Cab</h1>
+        <p>Fast, safe and affordable rides at your fingertips.</p>
+      </div>
+
+      <div class="booking-card">
+
+        <div class="location-input">
+          <label>📍 Pickup Location</label>
+          <input
+            type="text"
+            id="pickup"
+            placeholder="Enter pickup location"
+          >
+        </div>
+
+        <div class="location-input">
+          <label>🏁 Drop Location</label>
+          <input
+            type="text"
+            id="drop"
+            placeholder="Enter destination"
+          >
+        </div>
+
+        <div class="input-row">
+
+          <div>
+            <label>📅 Date</label>
+            <input type="date" id="date">
+          </div>
+
+          <div>
+            <label>⏰ Time</label>
+            <input type="time" id="time">
+          </div>
+
+        </div>
+
+        <h3>Select Cab</h3>
+
+        <div class="cab-options">
+
+          <div class="cab active" data-type="Mini" data-price="12">
+            <div class="cab-icon">🚗</div>
+            <h4>Mini</h4>
+            <p>₹12/km</p>
+            <small>4 Seats</small>
+          </div>
+
+          <div class="cab" data-type="Sedan" data-price="16">
+            <div class="cab-icon">🚘</div>
+            <h4>Sedan</h4>
+            <p>₹16/km</p>
+            <small>4 Seats</small>
+          </div>
+
+          <div class="cab" data-type="SUV" data-price="22">
+            <div class="cab-icon">🚙</div>
+            <h4>SUV</h4>
+            <p>₹22/km</p>
+            <small>6 Seats</small>
+          </div>
+
+        </div>
+
+        <div class="distance-box">
+          <label>Estimated Distance</label>
+
+          <div>
+            <input
+              type="number"
+              id="distance"
+              placeholder="Enter distance"
+              min="1"
+            >
+            <span>km</span>
+          </div>
+        </div>
+
+        <div class="fare">
+          <span>Estimated Fare</span>
+          <strong id="fare">₹0</strong>
+        </div>
+
+        <button id="bookBtn" class="book-btn">
+          Book Cab
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- Confirmation -->
+    <section id="confirmation" class="confirmation hidden">
+
+      <div class="success-icon">✓</div>
+
+      <h2>Cab Booked Successfully!</h2>
+
+      <p>Your cab has been booked.</p>
+
+      <div class="booking-details">
+        <p><strong>Booking ID:</strong> <span id="bookingId"></span></p>
+        <p><strong>Cab:</strong> <span id="confirmCab"></span></p>
+        <p><strong>Pickup:</strong> <span id="confirmPickup"></span></p>
+        <p><strong>Drop:</strong> <span id="confirmDrop"></span></p>
+        <p><strong>Date:</strong> <span id="confirmDate"></span></p>
+        <p><strong>Time:</strong> <span id="confirmTime"></span></p>
+        <p><strong>Fare:</strong> <span id="confirmFare"></span></p>
+      </div>
+
+      <button onclick="closeConfirmation()">
+        Done
+      </button>
+
+    </section>
+
+    <!-- Booking History -->
+    <section class="history" id="history">
+
+      <h2>My Bookings</h2>
+
+      <div id="bookingList"></div>
+
+      <div id="noBookings" class="no-bookings">
+        No bookings yet.
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 QuickCab | Cab Booking System</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
